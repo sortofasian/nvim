@@ -54,9 +54,10 @@ return require('packer').startup(function(use)
         config = function() require('plugins/gitsigns') end
     }
 
-    ----------- coq -----------
-    use {'ms-jpq/coq_nvim', config = function() require('plugins/coq') end}
-    use {'ms-jpq/coq.artifacts'}
+    -------- nvim-cmp ---------
+    use {'hrsh7th/cmp-nvim-lsp'}
+    use {'hrsh7th/cmp-path'}
+    use {'hrsh7th/nvim-cmp', config = function() require('plugins/cmp') end}
 
     ---------------------------
     if packer_bootstrapped then require('packer').sync() end
