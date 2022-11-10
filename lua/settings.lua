@@ -28,3 +28,5 @@ set.mouse              = nil
 set.cursorline         = true
 
 set.termguicolors      = true
+
+set.showcmd            = true

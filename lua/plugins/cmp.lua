@@ -4,9 +4,15 @@ if not loaded then
     return
 end
 
+local luasnip_loaded, luasnip = pcall(require, 'luasnip')
+if not luasnip_loaded then
+    print('Luasnip not loaded')
+    return
+end
+
 cmp.setup({
-    snippet = {},
-    window = {documentation = cmp.config.window.bordered()},
+    snippet = {expand = function(args) luasnip.lsp_expand(args.body) end},
+    window = {documentation = cmp.config.window.bordered(), completion = cmp.config},
     mapping = cmp.mapping.preset.insert({
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
