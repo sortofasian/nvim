@@ -1,4 +1,5 @@
 local set = vim.opt
+local let = vim.g
 
 set.hlsearch           = false
 set.incsearch          = true
@@ -30,3 +31,5 @@ set.cursorline         = true
 set.termguicolors      = true
 
 set.showcmd            = true
+let.loaded_netrw       = 1
+let.loaded_netrwPlugin = 1

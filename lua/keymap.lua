@@ -4,6 +4,7 @@ local let = vim.g
 let.mapleader = " "
 
 map('i', '<C-c>', '<ESC>', {noremap = true, silent = true})
+map('n', '<C-c>', '<ESC>', {noremap = true, silent = true})
 map('n', 's', ':w<CR>', {noremap = true, silent = true})
 
 map('n', '<Leader>t', ':vne<CR>:terminal<CR>i', {noremap = true, silent = true})

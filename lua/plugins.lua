@@ -21,6 +21,9 @@ return require('packer').startup(function(use)
     use('wbthomason/packer.nvim')
     ---------------------------
 
+    --------- plenary ---------
+    use {"nvim-lua/plenary.nvim"}
+
     ------- tokyo night -------
     use {
         'folke/tokyonight.nvim',
@@ -60,7 +63,34 @@ return require('packer').startup(function(use)
     use {'hrsh7th/nvim-cmp', config = function() require('plugins/cmp') end}
 
     --------- luasnip ---------
-    use({"L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*"})
+    use {"L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*"}
+
+    ------- tree-sitter -------
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = function()
+            local ts_update = require('nvim-treesitter.install').update({
+                with_sync = true
+            })
+            ts_update()
+        end
+    }
+
+    -------- telescope --------
+    use {
+        'nvim-telescope/telescope.nvim',
+        branch = '0.1.x',
+        requires = {{'nvim-lua/plenary.nvim'}}
+    }
+
+    ------ file-browser -------
+    use {
+        "nvim-telescope/telescope-file-browser.nvim",
+        config = function() require('plugins/telescope') end
+    }
+
+    ------ telescope-fzf ------
+    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}
 
     ---------------------------
     if packer_bootstrapped then require('packer').sync() end
