@@ -22,7 +22,7 @@ return require('packer').startup(function(use)
     ---------------------------
 
     --------- plenary ---------
-    use {"nvim-lua/plenary.nvim"}
+    use {'nvim-lua/plenary.nvim'}
 
     ------- tokyo night -------
     use {
@@ -37,6 +37,12 @@ return require('packer').startup(function(use)
     use {
         'williamboman/mason.nvim',
         config = function() require('plugins/mason') end
+    }
+
+    --- mason-tool-installer --
+    use {
+        'WhoIsSethDaniel/mason-tool-installer.nvim',
+        config = function() require('plugins/mason-tool-installer') end
     }
 
     ----- mason lspconfig -----

@@ -50,6 +50,7 @@ map('n', '<Leader><C-t>', "builtin")
 map('n', '<Leader>e', function() builtin.diagnostics() end)
 map('n', '<Leader>f', function()
     fb.file_browser({
+        grouped = true,
         path = '%:p:h',
         cwd = vim.fn.expand('%:p:h'),
         respect_gitignore = false

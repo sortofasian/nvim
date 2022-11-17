@@ -14,18 +14,14 @@ local capabilities = cmplsp.default_capabilities()
 masonlsp.setup()
 masonlsp.setup_handlers {
     function(server_name)
-        require("lspconfig")[server_name].setup(
-            {capabilities=capabilities})
+        require("lspconfig")[server_name].setup({capabilities = capabilities})
     end,
 
     ["sumneko_lua"] = function()
-        require('lspconfig').sumneko_lua.setup(
-            {
-                capabilities = capabilities,
-                settings = {
-                    Lua = {library = {}, diagnostics = {globals = {'vim'}}}
-                }
-            })
+        require('lspconfig').sumneko_lua.setup({
+            capabilities = capabilities,
+            settings = {Lua = {library = {}, diagnostics = {globals = {'vim'}}}}
+        })
     end
 }
 
