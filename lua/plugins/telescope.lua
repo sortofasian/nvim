@@ -46,7 +46,10 @@ telescope.load_extension "fzf"
 telescope.load_extension "file_browser"
 
 map('n', '<Leader>ef', builtin.diagnostics)
-map('n', '<Leader><C-t>', "builtin")
+map('n', '<Leader>gs', builtin.git_status)
+map('n', '<Leader>gc', builtin.git_commits)
+map('n', '<Leader>gb', builtin.git_branches)
+map('n', '<Leader>gh', builtin.git_stash)
 map('n', '<Leader>e', function() builtin.diagnostics() end)
 map('n', '<Leader>f', function()
     fb.file_browser({
