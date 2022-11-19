@@ -29,7 +29,9 @@ mti.setup(
 
     -- Json
     "json-lsp",
-    "fixjson"
+    "fixjson",
+
+    "dockerfile-language-server"
     },
     auto_update = true,
     run_on_start = true
