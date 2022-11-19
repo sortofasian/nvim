@@ -8,8 +8,7 @@ map('n', '<C-c>', '<ESC>', {noremap = true, silent = true})
 map('n', 's', ':w<CR>', {noremap = true, silent = true})
 
 map('n', '<Leader>t', ':vne<CR>:terminal<CR>i', {noremap = true, silent = true})
-map('t', '<Leader>T', '<C-\\><C-n>:q<CR>', {noremap = true, silent = true})
-map('t', '<Leader><C-t>', '<C-\\><C-n>', {noremap = true, silent = true})
+map('t', '<C-t>', '<C-\\><C-n>', {noremap = true, silent = true})
 
 vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(args)
